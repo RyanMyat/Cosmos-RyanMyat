@@ -90,16 +90,7 @@ def main():
          elif event.type == pygame.MOUSEBUTTONDOWN:
             laser_sound.play()
             cursor = pygame.mouse.get_pos()
-            
-            '''
-            Dr. Adam, my lasers don't go exactly to the cursor; it is a little off.
-            Below, I used 30 and 20 because the length and height of the spaceship image is 60 by 40 pixels.
-
-            
-            '''
-            
-            lasers.append([math.atan2(cursor[1]-(player_pos[1]+20), cursor[0]-(player_pos[0]+30)), player_pos[0]+30, player_pos[1]+20])
-            shoot = True
+            lasers.append([math.atan2(cursor[1]-(player_pos[1]+30), cursor[0]-(player_pos[0]+30)), player_pos[0]+26, player_pos[1]+27])
             
       # -------- Game Logic -------- #
 
@@ -135,14 +126,6 @@ def main():
          for i in lasers:
             i[1] += math.cos(i[0])*5
             i[2] += math.sin(i[0])*5
-
-            '''
-            Dr. Adam, should I delete the lasers once they go off screen?
-            How do I make it shoot multiple lasers at once?
-
-            
-            '''
-
             for j in lasers:
                laser1 = pygame.transform.rotate(laser, 270-(j[0]*(180/pi)))
                draw_laser = True
