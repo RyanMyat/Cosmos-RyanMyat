@@ -123,10 +123,16 @@ def main():
          lasers[i][1] += math.cos(lasers[i][0])*5
          lasers[i][2] += math.sin(lasers[i][0])*5
 
+         # the below for loop is a nested loop.  So that for each laser you again loop over all lasers.  I don't think
+         # that you want to do this.  Why don't you rotate the lasers right before you draw them.  Right now, laser1 holds
+         # the image only for a single laser.  It is not a list.  You could also create a list of rotated lasers and draw
+         # these.
+         
          for j in range(len(lasers)):
             laser1 = pygame.transform.rotate(laser, 270-(lasers[j][0]*(180/pi)))
             break
 
+            
          if lasers[i][1] <= -20 or lasers[i][1] >= 820 or lasers[i][2] <= -20 or lasers[i][2] >= 620:
             del lasers[i]
             break
