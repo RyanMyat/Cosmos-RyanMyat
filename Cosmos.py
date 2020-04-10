@@ -30,7 +30,6 @@ def main():
    # Timer
    ast_timer = 300
    num_time = 0
-   ast_speedx = 1
    
    # Lists
    keys = [False, False, False, False]
@@ -159,7 +158,7 @@ def main():
          
       # Asteroids Timer
       if ast_timer == 0:
-         asteroids.append([random.randint(0,90), random.randint(0,800), -30])
+         asteroids.append([random.randint(0,90), random.randint(0,800), -30], random.randrange(-1,3,2)])
 
          # Reset Timer
          ast_timer = 300 - (num_time*2)
@@ -170,7 +169,7 @@ def main():
          
       # Move Asteroids
       for i in range(len(asteroids)):
-         asteroids[i][1] += ast_speedx
+         asteroids[i][1] += asteroids[i][3]
          asteroids[i][2] += 1
 
          asteroids_rot.append(pygame.transform.rotate(asteroid1, 270-asteroids[i][0]))
