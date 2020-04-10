@@ -178,6 +178,20 @@ def main():
             del asteroids[i]
             break
          
+         '''
+         My collision code is not working yet.
+         '''
+         
+         # Collisions
+         for i in range(len(lasers)):
+            laser_rect.left = lasers[i][1]
+            laser_rect.top = lasers[i][2]
+
+            if asteroid1_rect.colliderect(laser_rect):
+               del asteroids[i]
+               del lasers[i]
+               del lasers_rot[i]
+         
       # -------- Drawing Code -------- #
                            
       # Background
