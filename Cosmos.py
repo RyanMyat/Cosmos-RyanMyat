@@ -179,19 +179,25 @@ def main():
             break
          
          '''
-         My collision code is not working yet.
+         My collision code is not working yet. It gets out of range when there are too many lasers or asteroids.
+         How can I fix this?
          '''
          
          # Collisions
          for i in range(len(lasers)):
-            laser_rect.left = lasers[i][1]
-            laser_rect.top = lasers[i][2]
+            asteroid1rect=pygame.Rect(asteroid1.get_rect())
+            asteroid1rect.left = asteroids[i][1]
+            asteroid1rect.top = asteroids[i][2]
+            laserrect=pygame.Rect(laser.get_rect())
+            laserrect.left = lasers[i][1]
+            laserrect.top = lasers[i][2]
 
-            if asteroid1_rect.colliderect(laser_rect):
+            if asteroid1rect.colliderect(laserrect):
                del asteroids[i]
                del lasers[i]
                del lasers_rot[i]
-         
+               break
+               
       # -------- Drawing Code -------- #
                            
       # Background
