@@ -61,6 +61,7 @@ def main():
 
    # Load Sounds
    laser_sound = pygame.mixer.Sound("Sounds/laser.ogg")
+   explosion_sound = pygame.mixer.Sound("Sounds/explosion.ogg")
 
    # -------- Main Program Loop -------- #
 
@@ -158,7 +159,7 @@ def main():
          
       # Asteroids Timer
       if ast_timer == 0:
-         asteroids.append([random.randint(0,90), random.randint(0,800), -30], random.randrange(-1,3,2)])
+         asteroids.append([random.randint(0,90), random.randint(0,801), -30], random.randrange(-1,3,2)])
 
          # Reset Timer
          ast_timer = 300 - (num_time*2)
@@ -169,6 +170,12 @@ def main():
          
       # Move Asteroids
       for i in range(len(asteroids)):
+         
+         '''
+         Dr. Adam, asteroids[i][1] += asteroids[i][3] gets out of range sometimes. I did asteroids[i][1] += asteroids[i][3] 
+         so that the asteroids don't come out in the same direction. Is there a better way to do this ?
+         '''
+         
          asteroids[i][1] += asteroids[i][3]
          asteroids[i][2] += 1
 
@@ -192,6 +199,7 @@ def main():
             laserrect.top = lasers[j][2]
 
             if asteroid1rect.colliderect(laserrect):
+               explosion_sound.play()
                del asteroids[i]
                del lasers[j]
                del lasers_rot[j]
