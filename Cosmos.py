@@ -173,7 +173,7 @@ def main():
          
          '''
          Dr. Adam, asteroids[i][1] += asteroids[i][3] gets out of range sometimes. I did asteroids[i][1] += asteroids[i][3] 
-         so that the asteroids don't come out in the same direction. Is there a better way to do this ?
+         so that all the asteroids don't come out in the same direction. Is there a better way to do this ?
          '''
          
          asteroids[i][1] += asteroids[i][3]
@@ -186,7 +186,7 @@ def main():
             break
          
          '''
-         I think my collision code works now.
+         I think my collision code works.
          '''
          
          # Collisions
@@ -245,6 +245,3 @@ def main():
 
 if __name__=='__main__':
     main()
-
-
-
