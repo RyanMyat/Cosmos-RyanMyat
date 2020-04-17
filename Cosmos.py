@@ -131,8 +131,8 @@ def main():
 
       '''
       Dr. Adam, after I edited the code, the rotations of the lasers are inaccurate. I noticed how the first laser is
-      always correct but other  lasers aren't. If you shoot another laser in the same direction as your first laser,
-      it comes out right. Does this mean I have to reset the angle after the first time? If so, how do I reset it?
+      always accurate but other lasers aren't. If you shoot another laser in the same direction as your first laser,
+      it comes out right again. Does this mean I have to reset the angle after the first time? If so, how do I reset it?
       '''
       
       # Shoot Lasers
@@ -150,7 +150,7 @@ def main():
       '''
       I have managed to get asteroids to come out from the top of the screen. I plan on doing the same for the right,
       left, and bottom sides as well. I tried to rotate the asteroids at random angles but they all seem to come out
-      the same. Should I rotate them? If so, am I doing the same mistake with the lasers?
+      with the same rotation. Do you think I should rotate them? If so, how can I fix this?
       '''
       
       # Timer
@@ -172,8 +172,9 @@ def main():
       for i in range(len(asteroids)):
 
          '''
-         Dr. Adam, asteroids[i][1] += asteroids[i][3] gets out of range sometimes. I did asteroids[i][1] += asteroids[i][3] 
-         so that all the asteroids don't come out in the same direction. I do not understand how it can get out of range.
+         Dr. Adam, asteroids[i][1] += asteroids[i][3] goes out of range. I did asteroids[i][1] += asteroids[i][3] 
+         so that the asteroids come out in random directions. I do not understand how the code can get out of range.
+         Can you help me?
          '''
          
          asteroids[i][1] += asteroids[i][3]
