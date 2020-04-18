@@ -154,12 +154,6 @@ def main():
             del lasers[i]
             del lasers_rot[i]
             break
-
-      '''
-      I have managed to get asteroids to come out from the top of the screen. I plan on doing the same for the right,
-      left, and bottom sides as well. I tried to rotate the asteroids at random angles but they all seem to come out
-      with the same rotation. Do you think I should rotate them? If so, how can I fix this?
-      '''
       
       # Timer 1
       if life > 0:
@@ -168,10 +162,16 @@ def main():
          bolt_timer -= 1
          bolt_erase -= 1
          acc_timer -= 1
+      
+      '''
+      I have managed to get asteroids to come out from the top of the screen. I plan on doing the same for the right,
+      left, and bottom sides as well. I tried to rotate the asteroids at random angles but they all seem to come out
+      with the same rotation. Do you think I should rotate them? If so, how can I fix this?
+      '''
          
       # Asteroids Timer 1
       if ast1_timer == 0:
-         asteroids1.append([random.randrange(0,360,50), random.randint(0,800), -30, random.randrange(-1,2,2), random.randint(1,3)])
+         asteroids1.append([random.randrange(0,360), random.randint(0,800), -30, random.randrange(-1,2,2), random.randint(1,3)])
 
          # Reset Timer 1
          ast1_timer = 275-(ast1_num*2)
@@ -182,7 +182,7 @@ def main():
 
       # Asteroids Timer 2
       if ast2_timer == 0:
-         asteroids2.append([random.randrange(0,360,50), 800, random.randint(0,600), random.randint(-4,-2), random.randrange(-1,2,2)])
+         asteroids2.append([random.randrange(0,360), 800, random.randint(0,600), random.randint(-4,-2), random.randrange(-1,2,2)])
 
          # Reset Timer 2
          ast2_timer = 300-(ast2_num*3)
