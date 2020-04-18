@@ -142,6 +142,10 @@ def main():
       always accurate but other lasers aren't. If you shoot another laser in the same direction as your first laser,
       it comes out right again. Does this mean I have to reset the angle after the first time? If so, how do I reset it?
       '''
+      # The problem is in the shoot laser code.  lasers_rot.append(...)
+      #you don't want to keep appending to lasers_rot every time you move the laser.
+      # this list will get very long quickly.
+      # just set lasers_rot[i] = pygame.transform.rotate..
       
       # Shoot Lasers
       for i in range(len(lasers)):
@@ -168,7 +172,8 @@ def main():
       left, and bottom sides as well. I tried to rotate the asteroids at random angles but they all seem to come out
       with the same rotation. Do you think I should rotate them? If so, how can I fix this?
       '''
-         
+      # This seems to be the same problem with the lasers.  Fix that and you will know how to fix this too.
+      
       # Asteroids Timer 1
       if ast1_timer == 0:
          asteroids1.append([random.randrange(0,360), random.randint(0,800), -30, random.randrange(-1,2,2), random.randint(1,3)])
@@ -199,7 +204,8 @@ def main():
          so that the asteroids come out in random directions. I do not understand how the code can get out of range.
          Can you help me?
          '''
-         
+        # what is asteroids1[i][4]  that looks like it is out of index range.
+      
          asteroids1[i][1] += asteroids1[i][3]
          asteroids1[i][2] += asteroids1[i][4]
 
