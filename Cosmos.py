@@ -152,8 +152,15 @@ def main():
          lasers[i][1] += math.cos(lasers[i][0])*6
          lasers[i][2] += math.sin(lasers[i][0])*6
 
-         lasers_rot.append(pygame.transform.rotate(laser, 270-(lasers[i][0]*(180/pi))))
+         lasers_rot[i] = pygame.transform.rotate(laser, 270-(lasers[i][0]*(180/pi)))
+         
+         
+         '''
+         Dr. Adam, it says that in  lasers_rot[i] = pygame.transform.rotate(laser, 270-(lasers[i][0]*(180/pi))) 
+         IndexError: list assignment index out of range 
+         '''
 
+         
          if lasers[i][1] <= -20 or lasers[i][1] >= 820 or lasers[i][2] <= -20 or lasers[i][2] >= 620:
             del lasers[i]
             del lasers_rot[i]
@@ -200,11 +207,20 @@ def main():
       for i in range(len(asteroids1)):
 
          '''
-         Dr. Adam, asteroids[i][1] += asteroids[i][3] goes out of range. I did asteroids[i][1] += asteroids[i][3] 
+         Dr. Adam, asteroids1[i][1] += asteroids1[i][3] goes out of range. I did asteroids1[i][1] += asteroids1[i][3] 
          so that the asteroids come out in random directions. I do not understand how the code can get out of range.
          Can you help me?
          '''
         # what is asteroids1[i][4]  that looks like it is out of index range.
+      
+         
+         '''
+         Dr. Adam,
+         asteroids1[i][3] is to give the asteroids a random x speed of -1 or 1
+         asteroids1[i][4] is to give the asteroids a random y speed of 1, 2, or 3
+         how can asteroids1[i][1] += asteroids1[i][3]  or  asteroids1[i][4] be out of index range ?
+         '''
+         
       
          asteroids1[i][1] += asteroids1[i][3]
          asteroids1[i][2] += asteroids1[i][4]
