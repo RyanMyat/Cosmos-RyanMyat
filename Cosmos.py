@@ -220,7 +220,9 @@ def main():
          asteroids1[i][4] is to give the asteroids a random y speed of 1, 2, or 3
          how can asteroids1[i][1] += asteroids1[i][3]  or  asteroids1[i][4] be out of index range ?
          '''
-         
+         # Oh I see, it is probably happening when you delete asteroids1.  You need to break out of the for loop when you 
+         # do otherwise it will go out of range.  For example, line 286.  Also at line 294 it is a nested loop
+         # so the break statement will exit out of only one loop.
       
          asteroids1[i][1] += asteroids1[i][3]
          asteroids1[i][2] += asteroids1[i][4]
