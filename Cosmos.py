@@ -249,7 +249,7 @@ def main():
             del asteroids1_rot[i]
             player_rect.center = (400,300)
             life -= 1
-         
+            break
          # Hits 1
          for j in range(len(lasers)):
             
@@ -290,7 +290,7 @@ def main():
             del asteroids2_rot[i]
             player_rect.center = (400,300)
             life -= 1
-         
+            break
          # Hits 2
          for j in range(len(lasers)):
             
@@ -332,7 +332,7 @@ def main():
          speed = 2
       else:
          speed = 1
-      # add a life every certain points
+
       # Game Over
       if life == 0:
          done = True
