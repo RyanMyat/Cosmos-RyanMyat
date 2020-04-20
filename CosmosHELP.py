@@ -155,9 +155,9 @@ def main():
       for i in range(len(lasers)):
          lasers[i][1] += math.cos(lasers[i][0])*laser_speed
          lasers[i][2] += math.sin(lasers[i][0])*laser_speed
-         lasers_rot.append(pygame.transform.rotate(laser, 270-(lasers[i][0]*(180/pi))))
+         #lasers_rot.append(pygame.transform.rotate(laser, 270-(lasers[i][0]*(180/pi))))
          
-         #lasers_rot[i] = pygame.transform.rotate(laser, 270-(lasers[i][0]*(180/pi)))
+         lasers_rot[i] = pygame.transform.rotate(laser, 270-(lasers[i][0]*(180/pi)))
           
          
          '''
@@ -173,6 +173,7 @@ def main():
          it seems like all lasers will go in one and same direction
          I am confused.
          '''
+         
          
          if lasers[i][1] <= -20 or lasers[i][1] >= 820 or lasers[i][2] <= -20 or lasers[i][2] >= 620:
             del lasers[i]
@@ -236,6 +237,7 @@ def main():
       # Move Asteroids 1
       for i in range(len(asteroids1)):
 
+         
          '''
          asteroids1[i][0] += asteroids1[i][2] and asteroids1[i][1] += asteroids1[i][3] gets out of range sometimes
          it also happens sometimes to asteroids2, 3, and explode lists
