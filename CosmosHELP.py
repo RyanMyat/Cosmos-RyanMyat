@@ -237,10 +237,9 @@ def main():
       for i in range(len(asteroids1)):
 
          '''
-         both
-         asteroids1[i][0] += asteroids1[i][2] and asteroids1[i][1] += asteroids1[i][3]
-         asteroids2[i][1] += asteroids2[i][2] and asteroids2[i][1] += asteroids2[i][3]
-         gets out of range sometimes
+         asteroids1[i][0] += asteroids1[i][2] and asteroids1[i][1] += asteroids1[i][3] gets out of range sometimes
+         it also happens sometimes to asteroids2, 3, and explode lists
+         please help
          '''
          # Oh I see, it is probably happening when you delete asteroids1.  You need to break out of the for loop when you 
          # do otherwise it will go out of range.  For example, line 286.  Also at line 294 it is a nested loop
