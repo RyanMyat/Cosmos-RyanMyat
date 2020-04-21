@@ -28,7 +28,7 @@ def main():
    life = 3
    score = 0
    
-   # Timer
+   # Timers
    ast1_timer = 325
    ast1_num = 0
    ast2_timer = 350
@@ -52,7 +52,7 @@ def main():
    explode = []
    bolt_pos = []
    
-   # Load And Set Up Graphics
+   # Load & Set Up Graphics
    space = pygame.image.load("Images/background.png")
    spaceship = pygame.image.load("Images/spaceship.png")
    player_rect = spaceship.get_rect()
@@ -169,7 +169,7 @@ def main():
 
          '''
          Dr. Adam, I tried playing around with lasers_rot = pygame.transform.rotate(laser, 270-(lasers[i][0]*(180/pi)))
-         when I do that, the later laser comes out correct but the ones before change rotation as well
+         when I do that, the later laser comes out correct but the ones before change their rotation to the same as the later laser
          it seems like all lasers will go in one and same direction
          I am confused.
          '''
@@ -180,7 +180,7 @@ def main():
             del lasers_rot[i]
             break
       
-      # Timer 
+      # Timers
       if life > 0:
          ast1_timer -= 1
          ast2_timer -= 1
@@ -227,7 +227,7 @@ def main():
       if ast4_timer == 0:
          asteroids4.append([-32, random.randint(0,600), random.randint(1,4), random.randrange(-1,2,2)])
 
-         # Reset Timer 3
+         # Reset Timer 4
          ast4_timer = 340-(ast4_num*2)
          if ast4_num >= 130:
             ast4_num = 130
@@ -390,7 +390,7 @@ def main():
             life -= 1
             break
          
-         # Hits 2
+         # Hits 4
          for j in range(len(lasers)):
             
             laserrect = pygame.Rect(laser.get_rect())
@@ -405,7 +405,7 @@ def main():
                del lasers_rot[j]
                break
             
-      # Explosion
+      # Explosions
       for i in range(len(explode)):
 
          explode[i][0] += explode[i][2]
@@ -427,7 +427,7 @@ def main():
             life -= 1
             break
          
-         # Hits 2
+         # Hit Collisions
          for j in range(len(lasers)):
             
             laserrect = pygame.Rect(laser.get_rect())
