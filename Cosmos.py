@@ -157,8 +157,6 @@ def main():
           
          '''
          Dr. Adam, it says IndexError: list assignment index out of range for lasers_rot[i] = pygame.transform.rotate(laser, 270-(lasers[i][0]*(180/pi))) 
-         '''
-         '''
          I tried playing around with lasers_rot = pygame.transform.rotate(laser, 270-(lasers[i][0]*(180/pi)))
          when I do that, the later laser comes out correct but all the ones before change direction as well
          it seems like all lasers will go in one and same direction
