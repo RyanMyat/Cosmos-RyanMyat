@@ -151,23 +151,17 @@ def main():
       for i in range(len(lasers)):
          lasers[i][1] += math.cos(lasers[i][0])*laser_speed
          lasers[i][2] += math.sin(lasers[i][0])*laser_speed
-         lasers_rot.append(pygame.transform.rotate(laser, 270-(lasers[i][0]*(180/pi))))
+         #lasers_rot.append(pygame.transform.rotate(laser, 270-(lasers[i][0]*(180/pi))))
          
-         #lasers_rot[i] = pygame.transform.rotate(laser, 270-(lasers[i][0]*(180/pi)))
+         lasers_rot[i] = pygame.transform.rotate(laser, 270-(lasers[i][0]*(180/pi)))
           
-         
          '''
-
          Dr. Adam, it says IndexError: list assignment index out of range for lasers_rot[i] = pygame.transform.rotate(laser, 270-(lasers[i][0]*(180/pi))) 
-         Please help me. I do not know how to fix this.
-         
          '''
-
          '''
-         Dr. Adam, I tried playing around with lasers_rot = pygame.transform.rotate(laser, 270-(lasers[i][0]*(180/pi)))
-         when I do that, the later laser comes out correct but the ones before change rotation as well
+         I tried playing around with lasers_rot = pygame.transform.rotate(laser, 270-(lasers[i][0]*(180/pi)))
+         when I do that, the later laser comes out correct but all the ones before change direction as well
          it seems like all lasers will go in one and same direction
-         I am confused.
          '''
          
          if lasers[i][1] <= -20 or lasers[i][1] >= 820 or lasers[i][2] <= -20 or lasers[i][2] >= 620:
@@ -233,22 +227,11 @@ def main():
       for i in range(len(asteroids1)):
 
          '''
-         both
-         asteroids1[i][0] += asteroids1[i][2] and asteroids1[i][1] += asteroids1[i][3]
-         asteroids2[i][1] += asteroids2[i][2] and asteroids2[i][1] += asteroids2[i][3]
-         gets out of range sometimes
-         '''
-         # Oh I see, it is probably happening when you delete asteroids1.  You need to break out of the for loop when you 
-         # do otherwise it will go out of range.  For example, line 286.  Also at line 294 it is a nested loop
-         # so the break statement will exit out of only one loop.
-
-
-         """
-         Dr. Adam, I already added break's after I delete elements from the lists for asteroids. Am I missing any breaks?
+         asteroids1[i][0] += asteroids1[i][2] and asteroids1[i][1] += asteroids1[i][3] gets out of range sometimes
+         I already added break's after I delete elements from the lists for the asteroids. Am I missing any breaks?
          Or is it because of something else?
-         """
+         '''
 
-         
          asteroids1[i][0] += asteroids1[i][2]
          asteroids1[i][1] += asteroids1[i][3]
          
